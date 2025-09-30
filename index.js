@@ -38,6 +38,7 @@ async function login(e) {
 
   if (aluno && aluno.password === hashedPassword) {
     console.log('Login bem-sucedido como aluno!')
+    localStorage.setItem('alunoLogado', username)
     window.location.href = 'Aluno.html'
   } else {
     console.log('Credenciais inválidas. Tente novamente.')
