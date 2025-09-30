@@ -14,10 +14,7 @@ let alunos = [
   }
 ]
 
-let loginButton = document.getElementById('loginButton')
-let form = document.getElementById('loginForm')
-form.addEventListener('submit', e => e.preventDefault())
-loginButton.addEventListener('click', login)
+const form = document.getElementById('loginForm')
 
 function cadastrarAluno() {
   let cpf = document.getElementById('newCpf').value
@@ -56,7 +53,8 @@ function gerarSenha() {
   return senha
 }
 
-function login() {
+function login(e) {
+  e.preventDefault()
   let username = document.getElementById('username').value
   let password = document.getElementById('password').value
 
@@ -66,13 +64,17 @@ function login() {
 
   if (user) {
     console.log('Login bem-sucedido como professor!')
+    window.location.href = 'Professor.html'
     return
   }
 
-  user = alunos.find(u => u.nome === username && u.password === password)
+  user = alunos.find(u => u.ra === username && u.password === password)
   if (user) {
     console.log('Login bem-sucedido como aluno!')
+    window.location.href = 'Aluno.html'
   } else {
     console.log('Credenciais inválidas. Tente novamente.')
   }
 }
+
+form.addEventListener('submit', login)
