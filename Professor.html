@@ -12,7 +12,7 @@
 
       <label for="cpf">CPF:</label>
       <input
-        type="password"
+        type="text"
         id="cpf"
         required
         placeholder="ex:000.000.000-00"
@@ -21,21 +21,21 @@
       <label for="ra">RA: </label>
       <input type="number" id="ra" placeholder="ex:102466" required />
 
-      <label for="">Turma:</label>
+      <label for="turma">Turma:</label>
       <select name="turma" id="turma">
         <option value="">Selecione</option>
-        <option value="op1">A</option>
-        <option value="op2">B</option>
-        <option value="op2">C</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
       </select>
 
-      <label for="">Ano escolar:</label>
+      <label for="ano_escolar">Ano escolar:</label>
       <select name="ano_escolar" id="ano_escolar">
         <option value="">Selecione</option>
-        <option value="op1">9° Fundamental</option>
-        <option value="op2">1° Ensino Médio</option>
-        <option value="op2">2° Ensino Médio</option>
-        <option value="op2">3° Ensino Médio</option>
+        <option value="9° Fundamental">9° Fundamental</option>
+        <option value="1° Ensino Médio">1° Ensino Médio</option>
+        <option value="2° Ensino Médio">2° Ensino Médio</option>
+        <option value="3° Ensino Médio">3° Ensino Médio</option>
       </select>
 
       <button>Cadastrar aluno</button>
@@ -53,6 +53,7 @@
       <button type="submit">Pesquisar</button>
     </form>
 
+
     <div id="listarAlunos">
       <h3>Lista de Alunos</h3>
       <!-- O servidor deve renderizar cada aluno como uma linha -->
@@ -69,6 +70,12 @@
         </thead>
         <tbody></tbody>
       </table>
+
+  <div>
+    <h3>Histórico de Buscas</h3>
+    <ul id="historico-buscas"></ul>
+</div>
+
     </div>
     <script src="professor.js"></script>
   </body>
