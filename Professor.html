@@ -6,20 +6,27 @@
     <title>Página Professor</title>
   </head>
   <body>
-    <form action="">
+    <form id="formCadastroAlunos">
       <label for="nome">Nome aluno: </label>
-      <input type="text" id="nome" placeholder="ex: Magno Santos" required/>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="ex: Magno Santos"
+        required
+      />
 
       <label for="cpf">CPF:</label>
       <input
         type="text"
         id="cpf"
+        name="cpf"
         required
         placeholder="ex:000.000.000-00"
-        pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"/>
+      />
 
       <label for="ra">RA: </label>
-      <input type="number" id="ra" placeholder="ex:102466" required />
+      <input type="number" id="ra" name="ra" placeholder="ex:102466" required />
 
       <label for="turma">Turma:</label>
       <select name="turma" id="turma">
@@ -38,8 +45,9 @@
         <option value="3° Ensino Médio">3° Ensino Médio</option>
       </select>
 
-      <button>Cadastrar aluno</button>
+      <button type="submit">Cadastrar aluno</button>
     </form>
+    <span id="newSenha">Nova Senha: </span>
     <!-- buscar alunos pelo cpf (lembar de implementar o action)-->
     <form action="" method="get">
       <label for="buscar-cpf">Buscar por CPF</label>
@@ -49,7 +57,8 @@
         type="text"
         required
         pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"
-        placeholder="000.000.000-00"/>
+        placeholder="000.000.000-00"
+      />
       <button type="submit">Pesquisar</button>
     </form>
 
